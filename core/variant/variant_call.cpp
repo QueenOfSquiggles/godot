@@ -1959,6 +1959,12 @@ static void _register_variant_builtin_methods() {
 	bind_method(Transform3D, spherical_interpolate_with, sarray("xform", "weight"), varray());
 	bind_method(Transform3D, interpolate_with, sarray("xform", "weight"), varray());
 	bind_method(Transform3D, is_equal_approx, sarray("xform"), varray());
+	bind_method(Transform3D, forward, sarray(), varray());
+	bind_method(Transform3D, back, sarray(), varray());
+	bind_method(Transform3D, left, sarray(), varray());
+	bind_method(Transform3D, right, sarray(), varray());
+	bind_method(Transform3D, up, sarray(), varray());
+	bind_method(Transform3D, down, sarray(), varray());
 
 	/* Projection */
 

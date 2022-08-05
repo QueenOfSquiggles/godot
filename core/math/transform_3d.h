@@ -112,6 +112,25 @@ struct _NO_DISCARD_ Transform3D {
 				basis.xform(v));
 	}
 
+	_FORCE_INLINE_ Vector3 forward() const {
+		return -basis.rows[2].normalized();
+	}
+	_FORCE_INLINE_ Vector3 back() const {
+		return basis.rows[2].normalized();
+	}
+	_FORCE_INLINE_ Vector3 left() const {
+		return -basis.rows[0].normalized();
+	}
+	_FORCE_INLINE_ Vector3 right() const {
+		return basis.rows[0].normalized();
+	}
+	_FORCE_INLINE_ Vector3 up() const {
+		return basis.rows[1].normalized();
+	}
+	_FORCE_INLINE_ Vector3 down() const {
+		return -basis.rows[1].normalized();
+	}
+
 	void set(real_t xx, real_t xy, real_t xz, real_t yx, real_t yy, real_t yz, real_t zx, real_t zy, real_t zz, real_t tx, real_t ty, real_t tz) {
 		basis.set(xx, xy, xz, yx, yy, yz, zx, zy, zz);
 		origin.x = tx;
